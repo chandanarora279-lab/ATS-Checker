@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ats-checker
+    runtime: python
+    plan: free
+    buildCommand: ./build.sh
+    startCommand: cd ATS-CHECKER/core && gunicorn core.wsgi:application --timeout 120
+    healthCheckPath: /api/jobs/
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: GROQ_API_KEY
+        sync: false

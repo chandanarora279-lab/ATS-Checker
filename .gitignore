@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+myenv/
+venv/
+.venv/
+
+# Secrets
+.env
+.env.*
+
+# Local data: database, uploaded resumes, any PDFs
+db.sqlite3
+ATS-CHECKER/core/media/
+ATS-CHECKER/core/staticfiles/
+*.pdf
+
+# Frontend
+node_modules/
+frontend/dist/
+
+# Empty leftover files at the repo root
+/manage.py
+/script.py
+/requirements.txt
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
